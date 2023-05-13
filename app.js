@@ -1,9 +1,7 @@
 const express = require('express');
 const app = express();
-
-const productsRoutes = require('./routes/products.routes');
-
 require('./config/db');
+const productsRoutes = require('./routes/products.routes');
 
 app.use(express.json());
 
