@@ -39,6 +39,9 @@ const getProduct = (req, res) => {
 
 const createProduct = (req, res) => {
     const product = req.body;
+    const photo = req.file;
+    const { filename  } = photo;
+    product.photoUrl = filename;
     db.query('INSERT INTO products SET ? ', [product], (err, result) => {
         if (err) {
             return res.status(500).json({
